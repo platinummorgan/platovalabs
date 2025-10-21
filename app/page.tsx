@@ -10,7 +10,7 @@ export default function Home() {
       <header className="pt-20 pb-10">
         <div className="section-wrap">
           <div className="text-neutral-400 text-sm">platovalabs.com</div>
-          <h1 className="mt-6 text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
+          <h1 className="mt-6 text-4xl sm:text-6xl font-extrabold tracking-tight-[-0.02em] leading-tight">
             <span className="bg-gradient-to-r from-cyan-300 via-sky-300 to-indigo-300 bg-clip-text text-transparent">Small tools, big relief</span>
           </h1>
           <p className="mt-3 text-lg sm:text-xl text-neutral-300 max-w-3xl">Practical apps that make dollars work harder.</p>
@@ -23,11 +23,11 @@ export default function Home() {
       </header>
 
       {CATALOG.map(category => (
-        <section id={category.key} key={category.key} className="py-8">
+  <section id={category.key} key={category.key} className="pt-10 pb-8">
           <div className="section-wrap">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-3">
-                <span className="text-neutral-300">{
+                <span className="text-neutral-300 opacity-80">{
                   category.key === 'finance' ? <Icons.FinanceIcon /> :
                   category.key === 'tools' ? <Icons.ToolsIcon /> :
                   category.key === 'sports' ? <Icons.SportsIcon /> :
@@ -44,13 +44,13 @@ export default function Home() {
             {category.items.map((p: any) => (
               <Card key={p.name} className="p-5 hover:bg-neutral-900 transition">
                 <div className="flex items-center justify-between">
-                  <h3 className="text-lg font-semibold leading-tight">{p.name}</h3>
+                  <h3 className="text-[1.125rem] font-semibold leading-tight">{p.name}</h3>
                   <span className="text-xs px-2 py-1 rounded-full bg-neutral-800 text-neutral-300 border border-neutral-700">{p.tag}</span>
                 </div>
-                <p className="mt-2 text-neutral-300 text-sm leading-relaxed min-h-[48px]">{p.blurb}</p>
+                <p className="mt-2 text-neutral-300 text-sm leading-relaxed min-h-[48px]" style={{maxWidth: '50ch'}}>{p.blurb}</p>
                 <div className="mt-4 flex items-center gap-3">
-                  <a href={p.href} target="_blank" rel="noreferrer" aria-label={`Visit ${p.name}`}>
-                    <Button aria-label={`Visit ${p.name}`}>Visit ↗</Button>
+                  <a href={p.href} target="_blank" rel="noreferrer" aria-label={`Open ${p.name}`}>
+                    <Button aria-label={`Open ${p.name}`}>Open ↗</Button>
                   </a>
                   {/* changelog link intentionally removed; updates are on the /updates page */}
                 </div>

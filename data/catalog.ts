@@ -18,6 +18,7 @@ export const CATALOG = [
     key: 'sports',
     title: 'Sports',
     items: [
+      // TODO: replace with official TikTok handle URL when available
       { name: 'TikTok', blurb: 'Short sports predictions & picks.', href: 'https://www.tiktok.com/@predict_a_sport', tag: 'Sports' },
     ],
   },
@@ -25,7 +26,9 @@ export const CATALOG = [
     key: 'shops',
     title: 'Shops & Publishing',
     items: [
+      // TODO: paste official Etsy store URL when ready
       { name: 'Etsy Store', blurb: 'Merch & digital downloads.', href: 'https://www.etsy.com/shop/PlatLabs?ref=shop-header-name&listing_id=4390248520&from_page=listing', tag: 'Store' },
+      // TODO: replace with canonical Kindle author/search URL
       { name: 'Kindle Publishing', blurb: 'Books and guides on Amazon Kindle.', href: 'https://www.amazon.com/s?i=digital-text&rh=p_27%3APlatinum%2BMorgan&s=relevancerank&text=Platinum+Morgan&ref=dp_byline_sr_ebooks_1', tag: 'Publishing' },
     ],
   },
