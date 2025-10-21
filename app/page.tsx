@@ -1,21 +1,15 @@
 import Link from "next/link";
 import { Button, Card } from "@/components/ui";
-
-const PRODUCTS = [
-  { name: "Rebalance (Android)", blurb: "Budget & alerts with debt payoff and portfolio guidance.", href: "https://play.google.com/store/apps/details?id=com.wealthdial.app", tag: "Finance" },
-  { name: "QRKit.app", blurb: "Fast, privacy-friendly QR code generator.", href: "https://qrkit.app", tag: "Tools" },
-  { name: "PDFTrim.com", blurb: "Bulk trim, split, and compress PDFs in the browser.", href: "https://pdftrim.com", tag: "Docs" },
-  { name: "PayOfPath.com", blurb: "Amortization + payoff planners for loans and debts.", href: "https://payofpath.com", tag: "Finance" },
-  { name: "Ripstuff.net", blurb: "A playful graveyard of discontinued tech and products.", href: "https://ripstuff.net", tag: "Fun" },
-];
+import { PRODUCTS } from "@/data/products";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       <header className="max-w-6xl mx-auto px-6 pt-16 pb-8">
-        <div className="text-neutral-400 text-sm">platovalabs.com</div>
-        <h1 className="mt-4 text-4xl sm:text-6xl font-bold tracking-tight">Platova Labs</h1>
-        <p className="mt-3 text-lg sm:text-xl text-neutral-300 max-w-2xl">Tools for working-class wallets.</p>
+  <div className="text-neutral-400 text-sm">platovalabs.com</div>
+  <h1 className="mt-4 text-4xl sm:text-6xl font-bold tracking-tight">Small tools, big relief</h1>
+  <p className="mt-3 text-lg sm:text-xl text-neutral-300 max-w-2xl">Practical apps that make dollars work harder.</p>
         <div className="mt-6 flex gap-3">
           <Link href="#products"><Button>Explore products</Button></Link>
           <Link href="/contact"><Button className="bg-white/5">Contact</Button></Link>
@@ -36,8 +30,8 @@ export default function Home() {
               </div>
               <p className="mt-2 text-neutral-300 text-sm leading-relaxed min-h-[48px]">{p.blurb}</p>
               <div className="mt-4">
-                <a href={p.href} target="_blank" rel="noreferrer">
-                  <Button>Visit ↗</Button>
+                <a href={p.href} target="_blank" rel="noreferrer" aria-label={`Visit ${p.name}`}>
+                  <Button aria-label={`Visit ${p.name}`}>Visit ↗</Button>
                 </a>
               </div>
             </Card>
@@ -62,13 +56,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="max-w-6xl mx-auto px-6 pb-14 border-t border-neutral-800 pt-6 flex flex-col md:flex-row items-start md:items-center gap-3 justify-between">
-        <div>
-          <div className="text-sm text-neutral-400">Contact</div>
-          <a href="mailto:support@platovalabs.com" className="text-base">support@platovalabs.com</a>
-        </div>
-        <div className="text-neutral-500 text-sm">© {new Date().getFullYear()} Platova Labs. All rights reserved.</div>
-      </footer>
+      <Footer />
     </main>
   );
 }
