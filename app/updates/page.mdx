@@ -1,4 +1,30 @@
----
+import { UPDATES } from '@/data/updates';
+import Link from 'next/link';
+
+# Updates
+
+<div className="flex items-center justify-between">
+  <h1 className="text-3xl font-bold">Updates</h1>
+  <Link href="/" className="text-sm text-cyan-400">Back to Home</Link>
+</div>
+
+<p className="mt-2 text-sm text-neutral-400">A chronological feed of releases and important fixes.</p>
+
+## Rebalance {#rebalance}
+
+{UPDATES.filter(u => u.category === 'rebalance').map(u => (
+  <div key={u.id} className="mt-4">
+    <p>
+      <strong>{u.version} — {u.title}</strong> — <time dateTime={u.date}>{new Date(u.date).toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</time>
+    </p>
+    <p className="text-sm text-neutral-300">{u.description}</p>
+  </div>
+))}
+
+<div className="mt-8">
+  <Link href="#mobile-apps" className="text-sm text-neutral-300">← Mobile Apps</Link>
+</div>
+
 title: "Updates — Platova Labs"
 ---
 
