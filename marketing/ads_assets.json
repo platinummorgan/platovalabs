@@ -1,0 +1,39 @@
+{
+  "headlines": [
+    "Rebalance: Budget Smarter",
+    "Track Expenses Fast",
+    "Get Overspend Alerts",
+    "Pay Off Debt Faster",
+    "Auto Portfolio Rebalance",
+    "Daily Budget Planner",
+    "Alerts for Every Purchase",
+    "Save More, Stress Less"
+  ],
+  "descriptions": [
+    "Practical budget app to track spending, set limits, and get real-time alerts.",
+    "Simple expense tracker with category budgets and push alerts for overspend.",
+    "Plan debt payoff with payoff targets and payment reminders.",
+    "Auto rebalance savings and investments to keep your allocation on track.",
+    "Daily snapshot of balances, spend, and upcoming bills—stay in control.",
+    "Free to start, low-cost plans for power users who need advanced tools.",
+    "Set savings goals, get progress alerts, and see how small wins add up.",
+    "Secure, privacy-friendly budgeting—no selling your data, no clutter."
+  ],
+  "angles": {
+    "Stop waste": [
+      "Cut wasted subscriptions and impulse buys—set limits and get instant alerts.",
+      "Track every expense, spot leaks, and reallocate money to essentials.",
+      "Automated nudges and category limits that stop overspend before it happens."
+    ],
+    "Hit goals": [
+      "Set clear savings goals, automate transfers, and track progress daily.",
+      "Visual checkpoints and weekly alerts keep small, cost-sensitive budgets on track.",
+      "Smart suggestions reallocate spare cash so goals are met without extra stress."
+    ],
+    "Debt payoff": [
+      "Create payoff plans, prioritize high-interest balances, and get payment reminders.",
+      "See payoff timelines and the impact of extra payments to reduce interest faster.",
+      "Combine payoff plans with small rebalancing steps to keep investments working."
+    ]
+  }
+}
