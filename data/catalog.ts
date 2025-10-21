@@ -40,9 +40,9 @@ export const CATALOG = [
     key: 'in-the-works',
     title: 'In the Works',
     items: [
-      { name: 'QuarryCRM', blurb: 'A lightweight CRM for tiny teams.', href: 'https://quarrycrm.com', tag: 'Coming soon' },
-  { name: 'Sabremetrics', blurb: 'A new data-driven tool—details soon.', href: '#', tag: 'Coming soon' },
-  { name: 'Grocery App', blurb: 'A new data-driven tool—details soon.', href: '#', tag: 'Coming soon' },
+      { name: 'QuarryCRM', blurb: 'New product in development.', href: 'https://quarrycrm.com', tag: 'Coming soon' },
+      { name: 'New mobile app', blurb: 'Private testing. Details soon.', href: '#', tag: 'Coming soon' },
+      { name: 'New data project', blurb: 'Early research. Details soon.', href: '#', tag: 'Coming soon' },
     ],
   },
 ];

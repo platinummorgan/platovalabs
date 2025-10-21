@@ -39,6 +39,11 @@ export default function Home() {
               </Card>
             ))}
           </div>
+          {category.key === 'in-the-works' && (
+            <div className="mt-4 text-sm">
+              <a href="mailto:support@platovalabs.com" className="text-cyan-400 underline">Notify me</a>
+            </div>
+          )}
         </section>
       ))}
 
