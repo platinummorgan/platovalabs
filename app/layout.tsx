@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from 'next/font/google';
 import "./globals.css";
+import Header from '@/components/Header';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap', weight: ['400','600','700'] });
 
@@ -52,6 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className={`${inter.variable} bg-neutral-950 text-neutral-50 antialiased`}> 
+        <Header />
         {children}
         {/* Plausible analytics (deferred) */}
         <script defer data-domain="platovalabs.com" src="https://plausible.io/js/script.js"></script>
