@@ -7,8 +7,10 @@
 :root {
 	--brand-cyan: #22D3EE;
 	--brand-indigo: #6366F1;
-	--brand-slate: #0B0C0F;
-	--brand-ink: #0F172A;
+	--brand-slate: #071018;
+	--brand-ink: #0B1220;
+	--muted-foreground: #9AA6B2;
+	--glass-contrast: rgba(255,255,255,0.06);
 }
 
 /* Layered soft radial/linear background for a dark noise vibe */
@@ -51,11 +53,15 @@ body::after {
 .backdrop-grid { background-image: radial-gradient(rgba(255,255,255,0.01) 1px, transparent 1px); background-size: 20px 20px; }
 
 /* Brand button styles */
-.btn-brand { background: linear-gradient(90deg,var(--brand-indigo), var(--brand-cyan)); color: white; }
-.btn-ghost { background: transparent; border: 1px solid rgba(255,255,255,0.06); color: #e6eef8; }
+.btn-brand { background: linear-gradient(90deg,var(--brand-indigo), var(--brand-cyan)); color: white; box-shadow: 0 6px 18px rgba(99,102,241,0.12); }
+.btn-ghost { background: transparent; border: 1px solid var(--glass-contrast); color: var(--muted-foreground); }
 
 /* Glass card */
-.card-glass { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); backdrop-filter: blur(6px); }
+.card-glass { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border: 1px solid var(--glass-contrast); backdrop-filter: blur(6px); box-shadow: 0 6px 24px rgba(2,6,23,0.6); }
+
+.site-headline { color: transparent; background-clip: text; -webkit-background-clip: text; background-image: linear-gradient(90deg,var(--brand-cyan), var(--brand-indigo)); }
+
+.muted { color: var(--muted-foreground); }
 
 @media (prefers-reduced-motion: reduce) {
 	* { transition: none !important; animation: none !important; }

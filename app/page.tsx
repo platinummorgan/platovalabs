@@ -9,8 +9,8 @@ import HeroArt from '@/components/HeroArt';
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <header className="pt-8 pb-8">
-        <div className="section-wrap flex items-center justify-between">
+      <header className="pt-10 pb-8">
+        <div className="container flex items-center justify-between">
           <Logo />
           <nav className="flex items-center gap-4">
             <Link href="/updates" className="text-sm text-neutral-300">Updates</Link>
@@ -20,15 +20,15 @@ export default function Home() {
       </header>
 
       <section className="pt-6 pb-10">
-        <div className="section-wrap grid md:grid-cols-2 gap-8 items-center">
+        <div className="container grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h1 className="mt-6 text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--brand-cyan)] to-[var(--brand-indigo)]">Small tools, big relief</span>
+            <h1 className="mt-6 text-5xl sm:text-7xl font-extrabold tracking-tight leading-tight site-headline">
+              Small tools, big relief
             </h1>
             <p className="mt-3 text-lg sm:text-xl text-neutral-300 max-w-3xl">Practical apps that make dollars work harder.</p>
             <div className="mt-6 flex gap-3">
-              <Link href="#products"><Button aria-label="Explore products">Explore products</Button></Link>
-              <Link href="/contact"><Button className="bg-white/5" aria-label="Contact">Contact</Button></Link>
+              <Link href="#products"><Button className="btn-brand btn-pill">Explore products</Button></Link>
+              <Link href="/contact"><Button className="btn-ghost btn-pill">Contact</Button></Link>
             </div>
           </div>
           <div className="flex justify-center">
@@ -55,9 +55,9 @@ export default function Home() {
               <span className="text-neutral-400 text-sm">{category.items.length} listed</span>
             </div>
             <div className="h-px mb-6 bg-gradient-to-r from-white/10 via-white/30 to-white/0" />
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {category.items.map((p: any) => (
-              <Card key={p.name} className="p-5 hover:bg-neutral-900 transition">
+              <Card key={p.name} className="hover:bg-neutral-900 transition">
                 <div className="flex items-center justify-between">
                   <h3 className="text-[1.125rem] font-semibold leading-tight">{p.name}</h3>
                   <span className="text-xs px-2 py-1 rounded-full bg-neutral-800 text-neutral-300 border border-neutral-700">{p.tag}</span>
@@ -65,7 +65,7 @@ export default function Home() {
                 <p className="mt-2 text-neutral-300 text-sm leading-relaxed min-h-[48px]" style={{maxWidth: '50ch'}}>{p.blurb}</p>
                 <div className="mt-4 flex items-center gap-3">
                   <a href={p.href} target="_blank" rel="noreferrer" aria-label={`Open ${p.name}`}>
-                    <Button aria-label={`Open ${p.name}`}>Open ↗</Button>
+                    <Button className="btn-ghost" aria-label={`Open ${p.name}`}>Open ↗</Button>
                   </a>
                   {/* changelog link intentionally removed; updates are on the /updates page */}
                 </div>
