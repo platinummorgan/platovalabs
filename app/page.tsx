@@ -9,15 +9,6 @@ import HeroBillboard from '@/components/HeroBillboard';
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <header className="pt-10 pb-8">
-        <div className="container flex items-center justify-between">
-          <Logo />
-          <nav className="flex items-center gap-4">
-            <Link href="/updates" className="text-sm text-neutral-300">Updates</Link>
-            <Link href="/contact" className="text-sm text-neutral-300">Contact</Link>
-          </nav>
-        </div>
-      </header>
 
       {/* Billboard hero */}
       <section className="relative w-full overflow-hidden" aria-labelledby="hero-heading">
