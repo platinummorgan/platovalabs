@@ -14,6 +14,7 @@ export default function Footer() {
           <Link href="/privacy" className="text-sm underline underline-offset-2 text-neutral-300" aria-label="Privacy policy">Privacy</Link>
           <Link href="/terms" className="text-sm underline underline-offset-2 text-neutral-300" aria-label="Terms of service">Terms</Link>
           <Link href="/contact" className="text-sm underline underline-offset-2 text-neutral-300" aria-label="Contact page">Contact</Link>
+          <Link href="/updates" className="text-sm underline underline-offset-2 text-neutral-300" aria-label="Updates page">Updates</Link>
         </nav>
         <div className="text-neutral-500 text-sm">© {new Date().getFullYear()} Platova Labs. All rights reserved.</div>
       </div>

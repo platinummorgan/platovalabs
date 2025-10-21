@@ -1,4 +1,8 @@
 {
+  "framework": "nextjs",
+  "buildCommand": "next build",
+  "devCommand": "next dev",
+  "installCommand": "npm install",
   "headers": [
     {
       "source": "(.*)",
@@ -13,9 +17,10 @@
   ],
   "redirects": [
     {
-      "source": "https://www.platovalabs.com/:path*",
-      "destination": "https://platovalabs.com/:path*",
-      "permanent": true
+      "source": "/:splat*",
+      "has": [ { "type": "host", "value": "www.platovalabs.com" } ],
+      "destination": "https://platovalabs.com/:splat*",
+      "statusCode": 308
     }
   ]
 }
