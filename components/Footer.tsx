@@ -7,7 +7,8 @@ export default function Footer() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-start">
         <div>
           <div className="text-sm text-neutral-400">Contact</div>
-          <a href="mailto:support@platovalabs.com" className="text-base" aria-label="Email support">support@platovalabs.com</a>
+          <a href="mailto:support@platovalabs.com" className="text-base block" aria-label="Email support">support@platovalabs.com</a>
+          <div className="text-xs text-neutral-500 mt-1">Atlanta, GA</div>
         </div>
 
         <div className="flex flex-col items-start md:items-center">

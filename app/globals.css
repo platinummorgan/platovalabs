@@ -4,16 +4,43 @@
 
 :root { color-scheme: dark; }
 
+:root {
+	--brand-cyan: #22D3EE;
+	--brand-indigo: #6366F1;
+	--brand-slate: #0B0C0F;
+	--brand-ink: #0F172A;
+}
+
 /* Layered soft radial/linear background for a dark noise vibe */
+/* Perf: Move background to a pseudo-element to reduce paint cost on hover/transform
+	 and allow the browser to optimize it separately. Use will-change: opacity to hint
+	 for GPU compositing when needed. */
+/* Background: layered gradient + subtle noise texture */
 body {
-	background-color: #05060a; /* base */
-	background-image:
-		radial-gradient(60% 40% at 10% 20%, rgba(10,30,40,0.25), transparent 20%),
-		radial-gradient(40% 30% at 90% 80%, rgba(30,10,40,0.18), transparent 20%),
-		radial-gradient(60% 50% at 50% 10%, rgba(20,30,50,0.12), transparent 25%),
-		linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
-	background-blend-mode: overlay, overlay, overlay, normal;
-	background-attachment: fixed;
+	position: relative;
+	background-color: var(--brand-slate);
+}
+
+body::before {
+	content: '';
+	position: fixed;
+	inset: 0;
+	z-index: -1;
+	pointer-events: none;
+	background-image: radial-gradient(1200px at 20% -10%, #0B0C0F, transparent 40%), linear-gradient(180deg, #0B0C0F, #0A0D12);
+	background-blend-mode: overlay;
+}
+
+/* Noise layer */
+body::after {
+	content: '';
+	position: fixed;
+	inset: 0;
+	z-index: -1;
+	pointer-events: none;
+	background-image: url('/noise.png');
+	opacity: 0.03;
+	background-repeat: repeat;
 }
 
 :root {
@@ -22,6 +49,13 @@ body {
 
 .section-wrap { max-width: 72rem; margin-left: auto; margin-right: auto; padding-left: 1.5rem; padding-right: 1.5rem; }
 .backdrop-grid { background-image: radial-gradient(rgba(255,255,255,0.01) 1px, transparent 1px); background-size: 20px 20px; }
+
+/* Brand button styles */
+.btn-brand { background: linear-gradient(90deg,var(--brand-indigo), var(--brand-cyan)); color: white; }
+.btn-ghost { background: transparent; border: 1px solid rgba(255,255,255,0.06); color: #e6eef8; }
+
+/* Glass card */
+.card-glass { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); backdrop-filter: blur(6px); }
 
 @media (prefers-reduced-motion: reduce) {
 	* { transition: none !important; animation: none !important; }

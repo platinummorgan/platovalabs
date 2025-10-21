@@ -1,7 +1,7 @@
 import React from 'react';
 
-export const Icon = ({ children, title }: { children: React.ReactNode; title?: string }) => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" role="img">
+export const Icon = ({ children, title = '' }: { children: React.ReactNode; title?: string }) => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden={title ? 'false' : 'true'} role="img">
     {title ? <title>{title}</title> : null}
     <g stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">{children}</g>
   </svg>
@@ -54,11 +54,5 @@ export const LabIcon = ({ title = 'Lab' }: { title?: string }) => (
   </Icon>
 );
 
-export default {
-  FinanceIcon,
-  ToolsIcon,
-  SportsIcon,
-  ShopIcon,
-  AppIcon,
-  LabIcon,
-};
+const All = { FinanceIcon, ToolsIcon, SportsIcon, ShopIcon, AppIcon, LabIcon };
+export default All;

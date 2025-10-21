@@ -11,7 +11,32 @@
         { "key": "X-Content-Type-Options", "value": "nosniff" },
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
         { "key": "Permissions-Policy", "value": "geolocation=(), microphone=(), camera=()" },
-        { "key": "Content-Security-Policy", "value": "default-src 'self'; img-src 'self' https: data:; script-src 'self' https://plausible.io; style-src 'self' 'unsafe-inline'; connect-src 'self' https://plausible.io; font-src 'self' data:" }
+        { "key": "Content-Security-Policy", "value": "default-src 'self'; img-src 'self' https: data:; script-src 'self' https://plausible.io 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://plausible.io; font-src 'self' data:" },
+        { "key": "X-Robots-Tag", "value": "index, follow" }
+      ]
+    },
+    {
+      "source": "^/favicon.svg$",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "^/og.png$",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "^/_next/static/(?:css|media|chunks)/.*$",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "^/icons/(.*)$",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
     }
   ],
