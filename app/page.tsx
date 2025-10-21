@@ -34,9 +34,7 @@ export default function Home() {
                   <a href={p.href} target="_blank" rel="noreferrer" aria-label={`Visit ${p.name}`}>
                     <Button aria-label={`Visit ${p.name}`}>Visit ↗</Button>
                   </a>
-                  {p.extra?.changelog && (
-                    <a href={p.extra.changelog} className="text-sm text-neutral-300 underline">View patch log →</a>
-                  )}
+                  {/* changelog link intentionally removed; updates are on the /updates page */}
                 </div>
               </Card>
             ))}
