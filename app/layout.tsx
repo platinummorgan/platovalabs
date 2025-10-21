@@ -34,6 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Preconnect to analytics origin for faster TTFB on plausible */}
         <link rel="preconnect" href="https://plausible.io" crossOrigin="" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <meta name="google-site-verification" content="HIrI1_SBVgDi68BOB361mv4iFfbvXamJpiSuUoDFIjY" />
         <link rel="canonical" href="https://platovalabs.com/" />
         <meta name="robots" content="index,follow" />
         {/*
