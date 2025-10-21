@@ -2,27 +2,45 @@ import Link from "next/link";
 import { Button, Card } from "@/components/ui";
 import { CATALOG } from "@/data/catalog";
 import Footer from "@/components/Footer";
+import Icons from '@/components/Icons';
 
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <header className="max-w-6xl mx-auto px-6 pt-16 pb-8">
-  <div className="text-neutral-400 text-sm">platovalabs.com</div>
-  <h1 className="mt-4 text-4xl sm:text-6xl font-bold tracking-tight">Small tools, big relief</h1>
-  <p className="mt-3 text-lg sm:text-xl text-neutral-300 max-w-2xl">Practical apps that make dollars work harder.</p>
-        <div className="mt-6 flex gap-3">
-          <Link href="#products"><Button>Explore products</Button></Link>
-          <Link href="/contact"><Button className="bg-white/5">Contact</Button></Link>
+      <header className="pt-20 pb-10">
+        <div className="section-wrap">
+          <div className="text-neutral-400 text-sm">platovalabs.com</div>
+          <h1 className="mt-6 text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
+            <span className="bg-gradient-to-r from-cyan-300 via-sky-300 to-indigo-300 bg-clip-text text-transparent">Small tools, big relief</span>
+          </h1>
+          <p className="mt-3 text-lg sm:text-xl text-neutral-300 max-w-3xl">Practical apps that make dollars work harder.</p>
+          <div className="mt-2 text-sm text-neutral-500">Made by Platova Labs</div>
+          <div className="mt-6 flex gap-3">
+            <Link href="#products"><Button aria-label="Explore products">Explore products</Button></Link>
+            <Link href="/contact"><Button className="bg-white/5" aria-label="Contact">Contact</Button></Link>
+          </div>
         </div>
       </header>
 
       {CATALOG.map(category => (
-        <section id={category.key} key={category.key} className="max-w-6xl mx-auto px-6 py-8">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-2xl font-semibold">{category.title}</h2>
-            <span className="text-neutral-400 text-sm">{category.items.length} listed</span>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <section id={category.key} key={category.key} className="py-8">
+          <div className="section-wrap">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-3">
+                <span className="text-neutral-300">{
+                  category.key === 'finance' ? <Icons.FinanceIcon /> :
+                  category.key === 'tools' ? <Icons.ToolsIcon /> :
+                  category.key === 'sports' ? <Icons.SportsIcon /> :
+                  category.key === 'shops' ? <Icons.ShopIcon /> :
+                  category.key === 'mobile-apps' ? <Icons.AppIcon /> :
+                  <Icons.LabIcon />
+                }</span>
+                <h2 className="text-2xl font-semibold">{category.title}</h2>
+              </div>
+              <span className="text-neutral-400 text-sm">{category.items.length} listed</span>
+            </div>
+            <div className="h-px mb-6 bg-gradient-to-r from-white/10 via-white/30 to-white/0" />
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {category.items.map((p: any) => (
               <Card key={p.name} className="p-5 hover:bg-neutral-900 transition">
                 <div className="flex items-center justify-between">
@@ -38,6 +56,7 @@ export default function Home() {
                 </div>
               </Card>
             ))}
+            </div>
           </div>
           {category.key === 'in-the-works' && (
             <div className="mt-4 text-sm">
