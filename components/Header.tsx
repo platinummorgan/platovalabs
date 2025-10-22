@@ -15,7 +15,7 @@ export default function Header() {
         <nav aria-label="Primary" className="flex items-center gap-4">
           <Link href="#products" className={`text-sm px-2 py-1 rounded focus:ring-2 focus:ring-[var(--brand-cyan)] ${path === '/' ? 'aria-current' : ''}`}>Products</Link>
           <Link href="/updates" className="text-sm px-2 py-1 rounded focus:ring-2 focus:ring-[var(--brand-cyan)]">Updates</Link>
-          <Link href="/contact" className="text-sm px-2 py-1 rounded focus:ring-2 focus:ring-[var(--brand-cyan)]">Contact</Link>
+          <a href="mailto:support@platovalabs.com" className="text-sm px-2 py-1 rounded focus:ring-2 focus:ring-[var(--brand-cyan)]" aria-label="Email support">Contact</a>
         </nav>
       </div>
     </header>

@@ -1,1 +1,1 @@
-{"@context":"https://schema.org","@type":"Organization","name":"Platova Labs","url":"https://platovalabs.com","logo":"https://platovalabs.com/favicon.svg","sameAs":[]}
+{"@context":"https://schema.org","@type":"Organization","name":"Platova Labs","url":"https://platovalabs.com","logo":"https://platovalabs.com/favicon.svg","sameAs":[],"contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"support@platovalabs.com","url":"https://platovalabs.com/contact","areaServed":"US","availableLanguage":["English"]} ]}
