@@ -21,7 +21,15 @@ export default function Footer() {
           </nav>
         </div>
 
-        <div className="flex items-center justify-end text-neutral-500 text-sm">© {new Date().getFullYear()} Platova Labs. All rights reserved.</div>
+        <div className="flex items-center justify-end text-neutral-500 text-sm">
+          <div className="flex flex-col items-end">
+            <div>© {new Date().getFullYear()} Platova Labs. All rights reserved.</div>
+            <div className="mt-2 flex gap-3">
+              <a href="https://x.com/platovalabs" target="_blank" rel="noopener noreferrer" className="text-neutral-300 text-sm">X</a>
+              <a href="https://www.tiktok.com/@platovalabs" target="_blank" rel="noopener noreferrer" className="text-neutral-300 text-sm">TikTok</a>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
   );

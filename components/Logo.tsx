@@ -13,7 +13,7 @@ export default function Logo({ className = '' }: { className?: string }) {
           </linearGradient>
         </defs>
       </svg>
-      <span className="hidden sm:inline-block font-extrabold text-lg tracking-tight text-white">Platova Labs</span>
+  <span className="font-extrabold text-lg tracking-tight text-white">Platova Labs</span>
     </Link>
   );
 }

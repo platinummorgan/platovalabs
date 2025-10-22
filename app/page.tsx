@@ -88,25 +88,31 @@ export default function Home() {
   <section id={category.key} key={category.key} className="pt-10 pb-8">
     <div className="container">
             <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center gap-3">
-                <span className="text-neutral-300 opacity-80">{
+              <div className="section-header">
+                <div className="section-overline text-neutral-400">{category.title}</div>
+                <div className="section-divider" />
+                <div className="text-neutral-300 opacity-80">{
                   category.key === 'finance' ? <Icons.FinanceIcon /> :
                   category.key === 'tools' ? <Icons.ToolsIcon /> :
                   category.key === 'sports' ? <Icons.SportsIcon /> :
                   category.key === 'shops' ? <Icons.ShopIcon /> :
                   category.key === 'mobile-apps' ? <Icons.AppIcon /> :
                   <Icons.LabIcon />
-                }</span>
-                <h2 className="text-2xl font-semibold">{category.title}</h2>
+                }</div>
               </div>
               <span className="text-neutral-400 text-sm">{category.items.length} listed</span>
             </div>
-            <div className="h-px mb-6 bg-gradient-to-r from-white/10 via-white/30 to-white/0" />
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {category.items.map((p: any) => (
               <Card key={p.name} className="hover:bg-neutral-900 transition">
                 <div className="flex items-center justify-between">
-                  <h3 className="text-[1.125rem] font-semibold leading-tight">{p.name}</h3>
+                  <div className="flex items-center gap-3">
+                    <div className="card-icon" aria-hidden>
+                      {/* simple monochrome icon placeholder */}
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="8" stroke="white" strokeOpacity="0.6" strokeWidth="1.2"/></svg>
+                    </div>
+                    <h3 className="text-[1.125rem] font-semibold leading-tight">{p.name}</h3>
+                  </div>
                   <span className="text-xs px-2 py-1 rounded-full bg-neutral-800 text-neutral-300 border border-neutral-700">{p.tag}</span>
                 </div>
                 <p className="mt-2 text-neutral-300 text-sm leading-relaxed min-h-[48px]" style={{maxWidth: '50ch'}}>{p.blurb}</p>

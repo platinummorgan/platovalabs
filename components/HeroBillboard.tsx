@@ -2,8 +2,8 @@ import React from 'react';
 
 export default function HeroBillboard({ className = '' }: { className?: string }) {
   return (
-    <div className={`relative ${className}`} aria-hidden>
-      <svg viewBox="0 0 800 560" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" className="rounded-2xl">
+    <div className={`relative ${className} group`} aria-hidden>
+      <svg viewBox="0 0 800 560" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" className="rounded-2xl transform transition-transform duration-500 group-hover:translate-y-[-6px] group-hover:scale-[1.02]">
         <defs>
           <linearGradient id="g1" x1="0" x2="1">
             <stop offset="0" stopColor="#0EA5E9" stopOpacity="0.18" />
@@ -28,8 +28,8 @@ export default function HeroBillboard({ className = '' }: { className?: string }
         </g>
 
         {/* composition shapes */}
-        <rect x="80" y="200" rx="12" width="520" height="220" fill="#06111A" opacity="0.6" />
-        <rect x="120" y="240" rx="8" width="420" height="60" fill="#0B1720" opacity="0.45" />
+  <rect x="72" y="188" rx="16" width="536" height="236" fill="#06111A" opacity="0.6" />
+  <rect x="112" y="232" rx="12" width="420" height="72" fill="#0B1720" opacity="0.45" />
         <circle cx="640" cy="120" r="28" fill="#22D3EE" opacity="0.22" />
 
         {/* faint grid */}
@@ -41,6 +41,8 @@ export default function HeroBillboard({ className = '' }: { className?: string }
       </svg>
       {/* vignette */}
       <div className="pointer-events-none absolute inset-0 rounded-2xl" style={{ boxShadow: 'inset 0 120px 140px -80px rgba(0,0,0,0.7)' }} />
+      {/* glossy sheen */}
+      <div className="absolute left-6 top-6 w-40 h-20 rounded-full blur-3xl opacity-30 bg-gradient-to-r from-white/10 to-transparent pointer-events-none" />
     </div>
   );
 }

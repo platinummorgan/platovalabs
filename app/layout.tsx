@@ -6,8 +6,8 @@ import Header from '@/components/Header';
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap', weight: ['400','600','700'] });
 
 export const metadata: Metadata = {
-  title: "Platova Labs — Tools for working-class wallets",
-  description: "Platova Labs builds small, fast, privacy-friendly apps like Rebalance, QRKit, PDFTrim, and more.",
+  title: "Platova Labs — Small tools, big relief",
+  description: "Small, fast, privacy-first tools that make everyday money work a little easier.",
   openGraph: {
     title: "Platova Labs",
     description: "Tools for working-class wallets.",
@@ -37,6 +37,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   <meta name="google-site-verification" content="HIrI1_SBVgDi68BOB361mv4iFfbvXamJpiSuUoDFIjY" />
         <link rel="canonical" href="https://platovalabs.com/" />
         <meta name="robots" content="index,follow" />
+  <meta property="og:image" content="https://platovalabs.com/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
         {/*
           Small inline script to promote the Next-generated stylesheet to a preload.
           Lighthouse flagged the main CSS chunk as render-blocking. Next emits a
