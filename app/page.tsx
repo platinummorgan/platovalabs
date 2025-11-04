@@ -1,3 +1,4 @@
+'use client';
 import Link from "next/link";
 import { Button, Card } from "@/components/ui";
 import { CATALOG } from "@/data/catalog";
@@ -22,12 +23,42 @@ export default function Home() {
               big relief
             </h1>
             <p className="mt-3 text-lg sm:text-xl text-neutral-300 max-w-3xl">Practical apps that make dollars work harder.</p>
-            <div className="mt-6 flex gap-3">
-              <Link href="#products"><Button className="btn-brand btn-pill" aria-label="Explore products">Explore products</Button></Link>
-              <Link href="/contact"><Button className="btn-ghost btn-pill" aria-label="Contact">Contact</Button></Link>
+            <div className="mt-6 flex flex-wrap gap-3 items-center">
+              <Link href="#products">
+                <Button 
+                  className="btn-brand btn-pill text-base sm:text-lg px-6 py-3 animate-pulse" 
+                  aria-label="Explore products"
+                  onClick={() => {
+                    if (typeof window !== 'undefined' && (window as any).plausible) {
+                      (window as any).plausible('Hero CTA - Explore');
+                    }
+                  }}
+                >
+                  Explore products
+                </Button>
+              </Link>
+              <Link href="/contact">
+                <Button 
+                  className="btn-ghost btn-pill border-2" 
+                  aria-label="Get help"
+                  onClick={() => {
+                    if (typeof window !== 'undefined' && (window as any).plausible) {
+                      (window as any).plausible('Hero CTA - Contact');
+                    }
+                  }}
+                >
+                  Get help
+                </Button>
+              </Link>
+            </div>
+            <div className="mt-4 flex items-center gap-2 text-sm text-neutral-400">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              <span>Join 10,000+ users building better financial habits</span>
             </div>
             {/* progress dots (decorative) */}
-            <div className="mt-8 flex gap-2 items-center" aria-hidden>
+            <div className="mt-6 flex gap-2 items-center" aria-hidden>
               <div className="w-8 h-1 bg-white/12 rounded" />
               <div className="w-2 h-2 bg-white/10 rounded-full" />
               <div className="w-2 h-2 bg-white/8 rounded-full" />
@@ -103,13 +134,22 @@ export default function Home() {
               <span className="text-neutral-400 text-sm">{category.items.length} listed</span>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {category.items.map((p: any) => (
+            {category.items.map((p: any) => {
+              // Get category icon
+              const CategoryIcon = 
+                category.key === 'finance' ? Icons.FinanceIcon :
+                category.key === 'tools' ? Icons.ToolsIcon :
+                category.key === 'sports' ? Icons.SportsIcon :
+                category.key === 'shops' ? Icons.ShopIcon :
+                category.key === 'mobile-apps' ? Icons.AppIcon :
+                Icons.LabIcon;
+
+              return (
               <Card key={p.name} className="hover:bg-neutral-900 transition">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="card-icon" aria-hidden>
-                      {/* simple monochrome icon placeholder */}
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="8" stroke="white" strokeOpacity="0.6" strokeWidth="1.2"/></svg>
+                      <CategoryIcon />
                     </div>
                     <h3 className="text-[1.125rem] font-semibold leading-tight">{p.name}</h3>
                   </div>
@@ -117,13 +157,27 @@ export default function Home() {
                 </div>
                 <p className="mt-2 text-neutral-300 text-sm leading-relaxed min-h-[48px]" style={{maxWidth: '50ch'}}>{p.blurb}</p>
                 <div className="mt-4 flex items-center gap-3">
-                  <a href={p.href} target="_blank" rel="noreferrer" aria-label={`Open ${p.name}`}>
-                    <Button className="btn-ghost" aria-label={`Open ${p.name}`}>Open ↗</Button>
+                  <a 
+                    href={p.href} 
+                    target="_blank" 
+                    rel="noreferrer" 
+                    aria-label={`Open ${p.name}`}
+                    onClick={() => {
+                      if (typeof window !== 'undefined' && (window as any).plausible) {
+                        (window as any).plausible('Product Card - Open', { props: { product: p.name, category: category.title } });
+                      }
+                    }}
+                  >
+                    <Button className="btn-ghost group/btn" aria-label={`Open ${p.name}`}>
+                      <span>Open</span>
+                      <span className="inline-block transition-transform group-hover/btn:translate-x-1">↗</span>
+                    </Button>
                   </a>
                   {/* changelog link intentionally removed; updates are on the /updates page */}
                 </div>
               </Card>
-            ))}
+              );
+            })}
             </div>
           </div>
           {category.key === 'in-the-works' && (

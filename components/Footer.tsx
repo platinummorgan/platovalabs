@@ -1,3 +1,4 @@
+'use client';
 import Link from "next/link";
 import React from "react";
 
@@ -7,7 +8,18 @@ export default function Footer() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-start">
         <div>
           <div className="text-sm text-neutral-400">Contact</div>
-          <a href="mailto:support@platovalabs.com" className="text-base block" aria-label="Email support">support@platovalabs.com</a>
+          <a 
+            href="mailto:support@platovalabs.com" 
+            className="text-base block" 
+            aria-label="Email support"
+            onClick={() => {
+              if (typeof window !== 'undefined' && (window as any).plausible) {
+                (window as any).plausible('mailto - Click', { props: { location: 'Footer - Main' } });
+              }
+            }}
+          >
+            support@platovalabs.com
+          </a>
           <div className="text-xs text-neutral-500 mt-1">Email support@platovalabs.com</div>
           <div className="text-xs text-neutral-600 mt-1">We reply within 1–2 business days.</div>
         </div>
@@ -16,7 +28,18 @@ export default function Footer() {
           <nav aria-label="Footer navigation" className="flex gap-4 mb-2 flex-wrap justify-start md:justify-center">
             <Link href="/privacy" className="text-sm underline underline-offset-2 text-neutral-300" aria-label="Privacy policy">Privacy</Link>
             <Link href="/terms" className="text-sm underline underline-offset-2 text-neutral-300" aria-label="Terms of service">Terms</Link>
-            <a href="mailto:support@platovalabs.com" className="text-sm underline underline-offset-2 text-neutral-300" aria-label="Email support">Contact</a>
+            <a 
+              href="mailto:support@platovalabs.com" 
+              className="text-sm underline underline-offset-2 text-neutral-300" 
+              aria-label="Email support"
+              onClick={() => {
+                if (typeof window !== 'undefined' && (window as any).plausible) {
+                  (window as any).plausible('mailto - Click', { props: { location: 'Footer - Nav' } });
+                }
+              }}
+            >
+              Contact
+            </a>
             <Link href="/updates" className="text-sm underline underline-offset-2 text-neutral-300" aria-label="Updates page">Updates</Link>
           </nav>
         </div>

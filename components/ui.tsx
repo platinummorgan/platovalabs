@@ -15,7 +15,7 @@ export function Card({ className = '', children }: { className?: string; childre
   return (
     <div
       className={
-        'rounded-2xl transition-transform duration-200 transform hover:-translate-y-0.5 hover:shadow-xl ' +
+        'rounded-2xl transition-all duration-200 transform hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(34,211,238,0.15)] hover:scale-[1.02] ' +
         'card-glass p-5 ' + className
       }
     >
