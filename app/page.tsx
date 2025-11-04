@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import Icons, { FinanceIcon, ToolsIcon, SportsIcon, ShopIcon, AppIcon, LabIcon } from '@/components/Icons';
 import Logo from '@/components/Logo';
 import HeroBillboard from '@/components/HeroBillboard';
+import FAQ from '@/components/FAQ';
 
 export default function Home() {
   return (
@@ -114,6 +115,71 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Testimonials / Social proof */}
+      <section className="py-12">
+        <div className="container">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold">Trusted by makers and savers</h2>
+            <p className="text-neutral-400 mt-2">Real feedback from people building better financial habits</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div className="card-glass rounded-xl p-6">
+              <div className="flex items-center gap-1 mb-3">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="#FCD34D" aria-hidden>
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                ))}
+              </div>
+              <p className="text-sm text-neutral-300 mb-4">"PayOfPath helped me visualize my debt payoff timeline. Paid off $12K in 18 months using the avalanche method."</p>
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-cyan-500 to-indigo-500 flex items-center justify-center text-xs font-semibold">SJ</div>
+                <div>
+                  <div className="text-sm font-semibold">Sarah J.</div>
+                  <div className="text-xs text-neutral-500">PayOfPath user</div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="card-glass rounded-xl p-6">
+              <div className="flex items-center gap-1 mb-3">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="#FCD34D" aria-hidden>
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                ))}
+              </div>
+              <p className="text-sm text-neutral-300 mb-4">"QRKit is my go-to for quick QR codes. No signup, no tracking, just works. Perfect for event organizers."</p>
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-xs font-semibold">MT</div>
+                <div>
+                  <div className="text-sm font-semibold">Marcus T.</div>
+                  <div className="text-xs text-neutral-500">Event coordinator</div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="card-glass rounded-xl p-6">
+              <div className="flex items-center gap-1 mb-3">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="#FCD34D" aria-hidden>
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                ))}
+              </div>
+              <p className="text-sm text-neutral-300 mb-4">"Rebalance keeps me on track with budget alerts and portfolio rebalancing reminders. Simple and effective."</p>
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center text-xs font-semibold">AP</div>
+                <div>
+                  <div className="text-sm font-semibold">Alex P.</div>
+                  <div className="text-xs text-neutral-500">Android user since 2024</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
   <div id="products" />
   {CATALOG.map(category => (
   <section id={category.key} key={category.key} className="pt-10 pb-8">
@@ -155,7 +221,30 @@ export default function Home() {
                   </div>
                   <span className="text-xs px-2 py-1 rounded-full bg-neutral-800 text-neutral-300 border border-neutral-700">{p.tag}</span>
                 </div>
-                <p className="mt-2 text-neutral-300 text-sm leading-relaxed min-h-[48px]" style={{maxWidth: '50ch'}}>{p.blurb}</p>
+                
+                {/* Badges and platform */}
+                <div className="mt-2 flex items-center gap-2 flex-wrap">
+                  {p.badge && (
+                    <span className={`text-xs px-2 py-0.5 rounded-full font-semibold ${
+                      p.badge === 'Popular' ? 'bg-cyan-500/10 text-cyan-400 border border-cyan-500/20' :
+                      p.badge === 'Free' ? 'bg-green-500/10 text-green-400 border border-green-500/20' :
+                      p.badge === 'New' ? 'bg-indigo-500/10 text-indigo-400 border border-indigo-500/20' :
+                      'bg-yellow-500/10 text-yellow-400 border border-yellow-500/20'
+                    }`}>
+                      {p.badge}
+                    </span>
+                  )}
+                  {p.platform && (
+                    <span className="text-xs text-neutral-500 flex items-center gap-1">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" className="text-neutral-500">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+                      </svg>
+                      {p.platform}
+                    </span>
+                  )}
+                </div>
+                
+                <p className="mt-2 text-neutral-300 text-sm leading-relaxed" style={{maxWidth: '50ch'}}>{p.blurb}</p>
                 <div className="mt-4 flex items-center gap-3">
                   <a 
                     href={p.href} 
@@ -202,6 +291,50 @@ export default function Home() {
             <h4 className="font-semibold">One hub</h4>
             <p className="text-sm text-neutral-300 mt-1">All apps, docs, and support in one place.</p>
           </Card>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <FAQ />
+
+      {/* Trust badges */}
+      <section className="py-8 border-t border-neutral-800">
+        <div className="container">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-6">
+              <p className="text-sm text-neutral-500">Committed to your privacy and security</p>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="flex flex-col items-center gap-2 p-4">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-cyan-400">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                <div className="text-xs text-neutral-400 text-center font-medium">Privacy First</div>
+              </div>
+              <div className="flex flex-col items-center gap-2 p-4">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-indigo-400">
+                  <rect x="3" y="11" width="18" height="11" rx="2" stroke="currentColor" strokeWidth="2"/>
+                  <path d="M7 11V7a5 5 0 0110 0v4" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+                <div className="text-xs text-neutral-400 text-center font-medium">Secure Data</div>
+              </div>
+              <div className="flex flex-col items-center gap-2 p-4">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-cyan-400">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+                  <path d="M12 6v6l4 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+                <div className="text-xs text-neutral-400 text-center font-medium">99.9% Uptime</div>
+              </div>
+              <div className="flex flex-col items-center gap-2 p-4">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-indigo-400">
+                  <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M8 10h8M8 14h4" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+                <div className="text-xs text-neutral-400 text-center font-medium">1-2 Day Support</div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
