@@ -42,7 +42,7 @@ export default function FAQ() {
 
   return (
     <section className="py-16 bg-neutral-950/30">
-      <div className="container max-w-3xl">
+      <div className="container max-w-3xl mx-auto">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold">Frequently Asked Questions</h2>
           <p className="text-neutral-400 mt-2">Everything you need to know about our products</p>

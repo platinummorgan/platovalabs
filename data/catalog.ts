@@ -44,7 +44,7 @@ export const CATALOG = [
     title: 'In the Works',
     items: [
       { name: 'QuarryCRM', blurb: 'Customer relationship management built for small teams. Track leads, manage contacts, and close deals without the enterprise bloat.', href: 'https://quarrycrm.com', tag: 'Coming soon', badge: 'New', platform: 'Web' },
-      { name: 'New mobile app', blurb: 'Finance and productivity app currently in private testing. Details and beta access coming soon.', href: '#', tag: 'Coming soon', badge: 'Beta', platform: 'iOS & Android' },
+      { name: 'Where its at?', blurb: 'Keep track of things you lend to others and where you store your belongings. Never forget who borrowed what or where you put something important.', href: '#', tag: 'Coming soon', badge: 'Beta', platform: 'Android' },
       { name: 'New data project', blurb: 'Early-stage research into financial data aggregation and insights. Stay tuned for updates.', href: '#', tag: 'Coming soon', platform: 'Web' },
     ],
   },

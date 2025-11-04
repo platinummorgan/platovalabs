@@ -14,7 +14,7 @@ export default function Home() {
 
       {/* Billboard hero */}
       <section className="relative w-full overflow-hidden" aria-labelledby="hero-heading">
-        <div className="absolute inset-0 bg-[radial-gradient(800px_400px_at_10%_10%,rgba(34,211,238,0.06),transparent),linear-gradient(180deg,rgba(3,7,11,0.85),rgba(4,6,8,0.95))]" />
+        <div className="absolute inset-0 bg-[radial-gradient(1000px_500px_at_15%_15%,rgba(34,211,238,0.15),transparent),radial-gradient(800px_600px_at_85%_40%,rgba(99,102,241,0.12),transparent),linear-gradient(180deg,rgba(3,7,11,0.9),rgba(4,6,8,0.95))]" />
         <div className="absolute inset-0 opacity-5 bg-[url('/noise.png')]" />
         <div className="container relative z-10 grid md:grid-cols-2 items-center" style={{ minHeight: '70vh', maxHeight: '680px' }}>
           <div>
@@ -76,39 +76,46 @@ export default function Home() {
       {/* Value props row */}
       <section className="pt-8 pb-8">
         <div className="container grid sm:grid-cols-3 gap-4">
-          <div tabIndex={0} className="card-glass rounded-xl p-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-cyan)]">
+          <div tabIndex={0} className="card-glass rounded-xl p-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-cyan)] hover:border-cyan-500/30 transition-all">
             <div className="flex items-center gap-3">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden>
-                <rect width="24" height="24" rx="6" fill="#0B1720" />
-                <path d="M6 12h12" stroke="#22D3EE" strokeWidth="1.5" strokeLinecap="round" />
-              </svg>
+              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500/20 to-cyan-600/10 flex items-center justify-center border border-cyan-500/20">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden>
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#22D3EE" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M9 12l2 2 4-4" stroke="#22D3EE" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
               <div>
-                <div className="font-semibold">Privacy-first</div>
-                <div className="text-sm muted">No dark patterns. Clear pricing.</div>
+                <div className="font-semibold text-cyan-100">Privacy-first</div>
+                <div className="text-sm text-neutral-400">No dark patterns. Clear pricing.</div>
               </div>
             </div>
           </div>
-          <div tabIndex={0} className="card-glass rounded-xl p-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-cyan)]">
+          <div tabIndex={0} className="card-glass rounded-xl p-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-cyan)] hover:border-indigo-500/30 transition-all">
             <div className="flex items-center gap-3">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden>
-                <rect width="24" height="24" rx="6" fill="#0B1720" />
-                <circle cx="12" cy="12" r="4" fill="#6366F1" />
-              </svg>
+              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-indigo-500/20 to-indigo-600/10 flex items-center justify-center border border-indigo-500/20">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden>
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#6366F1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
               <div>
-                <div className="font-semibold">Built fast</div>
-                <div className="text-sm muted">Small tools that solve real problems.</div>
+                <div className="font-semibold text-indigo-100">Built fast</div>
+                <div className="text-sm text-neutral-400">Small tools that solve real problems.</div>
               </div>
             </div>
           </div>
-          <div tabIndex={0} className="card-glass rounded-xl p-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-cyan)]">
+          <div tabIndex={0} className="card-glass rounded-xl p-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-cyan)] hover:border-purple-500/30 transition-all">
             <div className="flex items-center gap-3">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden>
-                <rect width="24" height="24" rx="6" fill="#0B1720" />
-                <path d="M6 8h12v8H6z" fill="#22D3EE" />
-              </svg>
+              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500/20 to-purple-600/10 flex items-center justify-center border border-purple-500/20">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden>
+                  <rect x="3" y="3" width="7" height="7" rx="1" stroke="#A78BFA" strokeWidth="2"/>
+                  <rect x="14" y="3" width="7" height="7" rx="1" stroke="#A78BFA" strokeWidth="2"/>
+                  <rect x="14" y="14" width="7" height="7" rx="1" stroke="#A78BFA" strokeWidth="2"/>
+                  <rect x="3" y="14" width="7" height="7" rx="1" stroke="#A78BFA" strokeWidth="2"/>
+                </svg>
+              </div>
               <div>
-                <div className="font-semibold">One hub</div>
-                <div className="text-sm muted">All apps, docs, and support in one place.</div>
+                <div className="font-semibold text-purple-100">One hub</div>
+                <div className="text-sm text-neutral-400">All apps, docs, and support in one place.</div>
               </div>
             </div>
           </div>
@@ -116,14 +123,15 @@ export default function Home() {
       </section>
 
       {/* Testimonials / Social proof */}
-      <section className="py-12">
-        <div className="container">
+      <section className="py-12 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-500/5 to-transparent pointer-events-none" />
+        <div className="container relative z-10">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold">Trusted by makers and savers</h2>
+            <h2 className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-indigo-400 bg-clip-text text-transparent">Trusted by makers and savers</h2>
             <p className="text-neutral-400 mt-2">Real feedback from people building better financial habits</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            <div className="card-glass rounded-xl p-6">
+            <div className="card-glass rounded-xl p-6 hover:border-cyan-500/30 transition-all">
               <div className="flex items-center gap-1 mb-3">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="#FCD34D" aria-hidden>
@@ -141,7 +149,7 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="card-glass rounded-xl p-6">
+            <div className="card-glass rounded-xl p-6 hover:border-indigo-500/30 transition-all">
               <div className="flex items-center gap-1 mb-3">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="#FCD34D" aria-hidden>
@@ -159,7 +167,7 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="card-glass rounded-xl p-6">
+            <div className="card-glass rounded-xl p-6 hover:border-purple-500/30 transition-all">
               <div className="flex items-center gap-1 mb-3">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="#FCD34D" aria-hidden>
